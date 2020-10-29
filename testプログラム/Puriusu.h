@@ -8,7 +8,7 @@ class Puriusu :public Car {
 
 	void Drive() override
 	{
-
+		printf("car‚ğŒp³‚µ‚½ƒvƒŠƒEƒX");
 	}
 
 protected:

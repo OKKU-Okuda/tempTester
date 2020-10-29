@@ -132,6 +132,7 @@
     <ClInclude Include="interface.h" />
     <ClInclude Include="Puriusu.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Singleton_Root.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

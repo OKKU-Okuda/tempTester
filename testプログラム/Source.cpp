@@ -4,6 +4,7 @@
 #include<stdio.h>
 #include "Header.h"
 
+#include "Singleton_Root.h"
 int main()
 {
 
@@ -13,10 +14,12 @@ int main()
 	printf("%u\n", (unsigned int)Car::Instance());
 	printf("%u\n", (unsigned int)Car2::Instance());
 
-	//Puriusu::Instance()->Instance()->Instance()->Instance()->Instance()->Drive();
+	Puriusu::Instance()->Instance()->Instance()->Instance()->Instance()->Drive();
+	Car::Instance()->Instance()->Instance()->Instance()->Instance()->Drive();
+
 	Nanka();
-
-
+	//Puriusu p;
+	//Car2 a;
 	SingletonManagement::RootSingleton<Car>::Delete();
 	SingletonManagement::RootSingleton<Car2>::Delete();
 
