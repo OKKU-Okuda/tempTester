@@ -7,12 +7,18 @@
 int main()
 {
 
-	Car::CreateInstance<Puriusu>();
-	Car2::CreateInstance();
+	SingletonManagement::RootSingleton<Car>::Create<Puriusu>();
+	SingletonManagement::RootSingleton<Car2>::Create<Car2>();
 
-	printf("%u\n", Car::Instance());
-	printf("%u\n", Car2::Instance());
+	printf("%u\n", (unsigned int)Car::Instance());
+	printf("%u\n", (unsigned int)Car2::Instance());
 
+	//Puriusu::Instance()->Instance()->Instance()->Instance()->Instance()->Drive();
 	Nanka();
+
+
+	SingletonManagement::RootSingleton<Car>::Delete();
+	SingletonManagement::RootSingleton<Car2>::Delete();
+
 	return 0;
 }

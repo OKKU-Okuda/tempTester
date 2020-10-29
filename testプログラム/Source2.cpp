@@ -9,7 +9,7 @@
 void Nanka()
 {
 
-	printf("%u\n", Car::Instance());
-	printf("%u", Car2::Instance());
+	printf("%u\n", (unsigned int)Car::Instance());
+	printf("%u", (unsigned int)Car2::Instance());
 
 }

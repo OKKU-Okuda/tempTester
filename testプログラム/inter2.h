@@ -8,6 +8,5 @@ class Car2 :public Singleton<Car2> {
 	virtual void Run() {};
 
 protected:
-	Car2() {};
-	~Car2() {};
+	Car2() {}; virtual ~Car2() {};
 };
