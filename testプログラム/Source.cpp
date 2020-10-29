@@ -5,12 +5,21 @@
 #include "Header.h"
 
 #include "Singleton_Root.h"
-int main()
+
+class A {
+
+};
+
+class B :public Singleton<int>
 {
 
+};
+int main()
+{
 	SingletonManagement::RootSingleton<Car>::Create<Puriusu>();
 	SingletonManagement::RootSingleton<Car2>::Create<Car2>();
-
+	//SingletonManagement::RootSingleton<A>::Create<A>();
+	//B::Instance();
 	printf("%u\n", (unsigned int)Car::Instance());
 	printf("%u\n", (unsigned int)Car2::Instance());
 
@@ -22,6 +31,7 @@ int main()
 	//Car2 a;
 	SingletonManagement::RootSingleton<Car>::Delete();
 	SingletonManagement::RootSingleton<Car2>::Delete();
+
 
 	return 0;
 }

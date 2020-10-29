@@ -6,6 +6,7 @@
 //=============================================================================
 
 #pragma once
+#include <type_traits>
 
 
 // Singletonを継承した第1直下クラスの注意点
@@ -32,11 +33,15 @@ class Singleton {
 public:
 
 	// インスタンス取得関数[このクラスを継承した場合はこの関数で実体を取得する]
-	static T* Instance() { return instance; }
+	static T* Instance() 
+	{ 
+		// エラー内容：Tはシングルトンクラスを継承していません
+		static_assert(std::is_base_of<Singleton<T>, T>::value == true, "The template keyword class does not inherit from the \"Singleton\" class.");
+		return instance; 
+	}
 
 
 protected:
-
 	Singleton() {};
 	virtual ~Singleton() {};
 
@@ -53,6 +58,7 @@ private:
 	template <class U>
 	static void CreateInstance()
 	{	// root用インスタンス作成関数
+
 		if (instance != nullptr)return;
 		instance = dynamic_cast<T*>(new U);
 	}
